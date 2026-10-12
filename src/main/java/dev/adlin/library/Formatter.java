@@ -33,7 +33,7 @@ public final class Formatter {
             final @NonNull String value,
             final @Nullable Object... placeholders
     ) {
-        final StringBuilder builder = new StringBuilder(value.length() + (placeholders.length) * 16);
+        final StringBuilder builder = new StringBuilder(value.length() + (placeholders.length * 16));
 
         int currentIndex = 0;
         int placeholderIndex = 0;
@@ -55,7 +55,7 @@ public final class Formatter {
             }
 
             placeholderIndex++;
-            currentIndex = nextPlaceholderIndex + 2;
+            currentIndex = nextPlaceholderIndex + PLACEHOLDER.length();
         }
 
         builder.append(value, currentIndex, value.length());
