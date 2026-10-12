@@ -1,1 +1,1 @@
-rootProject.name = "Formatter"
+rootProject.name = "JFormatter"
