@@ -36,25 +36,21 @@ public final class Formatter {
         final StringBuilder builder = new StringBuilder(value.length() + (placeholders.length * 16));
 
         int currentIndex = 0;
-        int placeholderIndex = 0;
+        int placeholderCount = 0;
 
-        while (placeholderIndex < placeholders.length) {
+        for (final Object placeholder : placeholders) {
             final int nextPlaceholderIndex = value.indexOf(PLACEHOLDER, currentIndex);
 
             if (nextPlaceholderIndex == -1) {
-                throw new IllegalArgumentException("Too many arguments provided! Expected " + placeholderIndex + ", but got " + placeholders.length);
+                throw new IllegalArgumentException(
+                        "Too many arguments provided! Expected " + placeholderCount + ", but got " + placeholders.length
+                );
             }
 
             builder.append(value, currentIndex, nextPlaceholderIndex);
+            builder.append(placeholder != null ? placeholder : "null");
 
-            final Object placeholder = placeholders[placeholderIndex];
-            if (placeholder != null) {
-                builder.append(placeholder);
-            } else {
-                builder.append("null");
-            }
-
-            placeholderIndex++;
+            placeholderCount++;
             currentIndex = nextPlaceholderIndex + PLACEHOLDER.length();
         }
 
