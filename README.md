@@ -9,6 +9,7 @@ Turn a template and a few values into a readable string with one method call
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Language: Java](https://img.shields.io/badge/Language-Java-orange.svg)](src/main/java/dev/adlin/library/Formatter.java)
 [![Build: Gradle](https://img.shields.io/badge/Build-Gradle-02303A.svg)](build.gradle.kts)
+[![JitPack](https://jitpack.io/v/aDL1n/JFormatter.svg)](https://jitpack.io/#aDL1n/JFormatter)
 
 [Quick start](#quick-start) • [Installation](#installation) • [Behavior](#behavior) • [Contributing](#contributing)
 
